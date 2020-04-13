@@ -1,21 +1,68 @@
 package com.edna.quizapptsu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
+
+import com.edna.quizapptsu.ui.QAHomeFragment;
+import com.edna.quizapptsu.ui.QAProfileFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private BottomNavigationView mNavBar;
+    private QAHomeFragment homeFragment;
+    private QAProfileFragment profileFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initUI();
+        initFunctional();
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main_bottom_bar_menu, menu);
-//        return true;
-//    }
+    private void initUI() {
+        mNavBar =   findViewById(R.id.main_nav_bar);
+        homeFragment = new QAHomeFragment();
+        profileFragment = new QAProfileFragment();
+        mNavBar.setSelectedItemId(R.id.home_item);
+        replaceFragmentWithSlideAnim(homeFragment);
+    }
+
+    private void initFunctional() {
+        mNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    default: throw new IllegalArgumentException("Position not valid");
+                    case R.id.home_item:
+                        replaceFragmentWithSlideAnim(homeFragment);
+                    case R.id.empty_item:
+                        break;
+                    case R.id.profile_item:
+                        replaceFragmentWithSlideAnim(profileFragment);
+                }
+                return true;
+            }
+        });
+    }
+
+    private void replaceFragmentWithSlideAnim(Fragment fragment) {
+
+        getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(
+                        R.anim.slide_in_left_animation,
+                        R.anim.slide_in_right_animation,
+                        R.anim.slide_in_right_animation,
+                        R.anim.slide_in_left_animation)
+                .replace(R.id.main_fragment_view, fragment)
+                .commit();
+
+    }
 }

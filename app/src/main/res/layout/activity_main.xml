@@ -68,6 +68,7 @@
             app:fabCradleRoundedCornerRadius="0dp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/main_nav_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:labelVisibilityMode="unlabeled"

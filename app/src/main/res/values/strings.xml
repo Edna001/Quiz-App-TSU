@@ -5,4 +5,18 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recently_played">Recently Played</string>
+    <string name="science">Science</string>
+    <string name="popular_topics">Popular Topics</string>
+    <string name="cosmos">Cosmos</string>
+    <string name="chemistry">Chemistry</string>
+
+    <!-- Chemistry Questions -->
+    <string name="chemistry_question_one">dff</string>
+
+    <!-- Cosmos Questions -->
+    <string name="cosmos_question_one">dff</string>
+
+    <!-- Science Questions -->
+    <string name="science_question_one">dff</string>
 </resources>
