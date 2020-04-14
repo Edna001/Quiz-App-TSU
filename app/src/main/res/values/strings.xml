@@ -10,13 +10,19 @@
     <string name="popular_topics">Popular Topics</string>
     <string name="cosmos">Cosmos</string>
     <string name="chemistry">Chemistry</string>
+    <string name="right_answers">Right Answers: %d</string>
 
-    <!-- Chemistry Questions -->
-    <string name="chemistry_question_one">dff</string>
+    <!-- Geography Questions -->
+    <string name="geography_question_one">What is the longest river in Europe?</string>
+    <string name="next">Next</string>
+    <string name="answers_counter">Answers Counter: %d</string>
 
-    <!-- Cosmos Questions -->
-    <string name="cosmos_question_one">dff</string>
+    <!-- Geography Answers -->
+    <string-array name="q_one_answers">
+        <item>Volga</item>
+        <item>Danube</item>
+        <item>Loire</item>
+        <item>Rhine</item>
+    </string-array>
 
-    <!-- Science Questions -->
-    <string name="science_question_one">dff</string>
 </resources>

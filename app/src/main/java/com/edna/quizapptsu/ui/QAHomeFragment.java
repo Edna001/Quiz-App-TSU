@@ -26,5 +26,6 @@ public class QAHomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
     }
 }

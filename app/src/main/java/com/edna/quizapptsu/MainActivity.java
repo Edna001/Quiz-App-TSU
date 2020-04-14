@@ -7,16 +7,21 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.edna.quizapptsu.ui.QAHomeFragment;
+import com.edna.quizapptsu.ui.QAPlayFragment;
 import com.edna.quizapptsu.ui.QAProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView mNavBar;
     private QAHomeFragment homeFragment;
+    private QAPlayFragment playFragment;
     private QAProfileFragment profileFragment;
+    private FloatingActionButton mFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initUI() {
-        mNavBar =   findViewById(R.id.main_nav_bar);
+        mNavBar = findViewById(R.id.main_nav_bar);
+        mFab = findViewById(R.id.main_fab);
         homeFragment = new QAHomeFragment();
+        playFragment = new QAPlayFragment();
         profileFragment = new QAProfileFragment();
         mNavBar.setSelectedItemId(R.id.home_item);
         replaceFragmentWithSlideAnim(homeFragment);
@@ -51,10 +58,16 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragmentWithSlideAnim(playFragment);
+            }
+        });
     }
 
     private void replaceFragmentWithSlideAnim(Fragment fragment) {
-
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(
                         R.anim.slide_in_left_animation,
@@ -63,6 +76,5 @@ public class MainActivity extends AppCompatActivity {
                         R.anim.slide_in_left_animation)
                 .replace(R.id.main_fragment_view, fragment)
                 .commit();
-
     }
 }

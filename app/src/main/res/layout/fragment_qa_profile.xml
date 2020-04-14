@@ -5,11 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.QAProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile Fragment"
-        android:textColor="#FFFFFF"/>
+        android:id="@+id/profile_answers_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/answers_counter"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:fontFamily="@font/qa_avenir_black"/>
 
 </FrameLayout>
