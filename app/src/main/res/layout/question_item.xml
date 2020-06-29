@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="center"
+        android:tint="@color/colorAccent"
+        android:src="@drawable/ic_question"/>
+
+    <TextView
+        android:id="@+id/itemQuestion"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        tools:text="Example"
+        android:paddingTop="10dp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/qa_avenir_black"
+        android:textColor="#FFFFFF"/>
+
+    <ImageButton
+        android:id="@+id/itemRemove"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="center"
+        android:tint="@color/colorAccent"
+        android:src="@drawable/ic_remove"
+        android:background="@android:color/transparent"/>
+
+</LinearLayout>

@@ -16,6 +16,12 @@
     <string name="geography_question_one">What is the longest river in Europe?</string>
     <string name="next">Next</string>
     <string name="answers_counter">Answers Counter: %d</string>
+    <string name="enter_question">Enter Question</string>
+    <string name="enter_answer">Enter Answer</string>
+    <string name="add_question">Add Question</string>
+    <string name="enter_right_answer">Enter Right Answer</string>
+    <string name="last_quiz">Last Quiz:</string>
+    <string name="coins_title">Coins:</string>
 
     <!-- Geography Answers -->
     <string-array name="q_one_answers">

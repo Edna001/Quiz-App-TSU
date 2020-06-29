@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.QuestionsFragment"
+    android:clickable="true"
+    android:focusable="true"
+    android:animateLayoutChanges="true"
+    android:id="@+id/questionsRoot"
+    android:background="@color/colorPrimaryDark">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/questionsView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        tools:listitem="@layout/question_item"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/questionsInputs"/>
+
+    <LinearLayout
+        android:id="@+id/questionsInputs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <EditText
+            android:id="@+id/questionsQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:maxLines="3"
+            android:textColorHint="#AAFFFFFF"
+            android:hint="@string/enter_question"
+            android:background="@drawable/bg_primary_cornered"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/questionsAnswerOne"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:maxLines="1"
+                android:inputType="text"
+                android:layout_marginEnd="10dp"
+                android:textColorHint="#AAFFFFFF"
+                android:hint="@string/enter_answer"
+                android:background="@drawable/bg_primary_cornered"/>
+
+            <EditText
+                android:id="@+id/questionsAnswerTwo"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:maxLines="1"
+                android:inputType="text"
+                android:textColorHint="#AAFFFFFF"
+                android:hint="@string/enter_answer"
+                android:background="@drawable/bg_primary_cornered"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:id="@+id/questionsAnswerThree"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:maxLines="1"
+                android:inputType="text"
+                android:layout_marginEnd="10dp"
+                android:textColorHint="#AAFFFFFF"
+                android:hint="@string/enter_answer"
+                android:background="@drawable/bg_primary_cornered"/>
+
+            <EditText
+                android:id="@+id/questionsAnswerFour"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:maxLines="1"
+                android:inputType="text"
+                android:textColorHint="#AAFFFFFF"
+                android:hint="@string/enter_answer"
+                android:background="@drawable/bg_primary_cornered"/>
+
+        </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/questionsRightAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:digits="1234"
+            android:inputType="text"
+            android:textColorHint="#AAFFFFFF"
+            android:hint="@string/enter_right_answer"
+            android:background="@drawable/bg_primary_cornered"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/questionsAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_question"
+            android:includeFontPadding="false"
+            android:textSize="12sp"
+            app:cornerRadius="12dp"
+            android:layout_gravity="end"
+            android:fontFamily="@font/qa_avenir_black"
+            android:textColor="@color/colorAccent"/>
+
+    </FrameLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/questionsAddQuestion"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_add"
+        android:scaleType="centerCrop"
+        android:padding="10dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bg_circle_btn"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
